@@ -1,88 +1,44 @@
-import React from "react";
+import React,{useState ,useEffect }from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./WorkshopBodyHeader.css";
+import VideoPlayer from '../video/VideoPlayer'
+import useToken from '../useToken';
+import {Card} from "@material-ui/core";
+import Workshops from "../Workshops/Workshops";
+import axios from 'axios'
+
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
+  video:{
+    align:'center',
+  }
+
 }));
 
-const WorkshopsBody = (props) => {
-  
+const WorkshopsBody = ({title}) => {
+  const { token} = useToken();
   const classes = useStyles();
-  
+  const [courses, setCourses] = useState([])
+
+  useEffect(() => {
+    const getCourses = async () => {
+      const response = await axios.get("/courses")
+      setCourses(response.data)
+    }
+    getCourses()
+  }, [])
+
   return (
     <>
-      {/* header intro & place for video/ prezzie ? 
-      */}
-      <div className="workshopBodyHeader">
-        <h2>Title of workshop - header comp</h2>
-        <div>
-          <h3>Some space to show vid/ ppt/ pdf</h3>
-
-
-
-        </div>
-      </div>
-
-      {/* course content - accordion */}
-      <div className={classes.root}>
-      <h2>Workshop content</h2>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography className={classes.heading}>Accordion 1</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-          >
-            <Typography className={classes.heading}>Accordion 2</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion disabled>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3a-content"
-            id="panel3a-header"
-          >
-            <Typography className={classes.heading}>
-              Disabled Accordion
-            </Typography>
-          </AccordionSummary>
-        </Accordion>
-      </div>
-
+   <Workshops 
+          courses={courses}
+          />
+          
+          {/**    
+      <Card className={classes.video}   align='center' width= '100%' height='%100' >
+        {token && <VideoPlayer /> }     
+          </Card>
+*/}
     </>
   );
 };

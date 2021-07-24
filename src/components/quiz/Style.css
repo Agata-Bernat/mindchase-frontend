@@ -1,0 +1,14 @@
+.containerM {
+    background-color: rgb(170, 172, 153);
+    margin-top: 75px;
+    border-radius: 10px;
+}
+
+.containerM >* {
+    border-radius: 5px;
+    box-shadow: 2xp 2px;
+}
+
+.question {
+    width: 500px;
+}

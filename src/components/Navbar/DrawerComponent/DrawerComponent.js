@@ -15,7 +15,7 @@ const DrawerComponent = () => {
     drawerContainer: {},
     iconButtonContainer: {
       marginLeft: "auto",
-      color: "white",
+      color: "red",
     },
 
     menuIconToggle: {
@@ -24,8 +24,6 @@ const DrawerComponent = () => {
   }));
 
   const [openDrawer, setOpenDrawer] = useState(false);
-
-  //Css
   const classes = useStyles();
   return (
     <>
@@ -45,25 +43,25 @@ const DrawerComponent = () => {
 
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
-              <ListItemText> Fees</ListItemText>
+              <ListItemText> Quiz</ListItemText>
             </ListItemIcon>
           </ListItem>
 
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
-              <ListItemText> Parents Account</ListItemText>
+              <ListItemText> my Account</ListItemText>
             </ListItemIcon>
           </ListItem>
 
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
-              <ListItemText> Holidays</ListItemText>
+              <ListItemText> Workshops</ListItemText>
             </ListItemIcon>
           </ListItem>
 
           <ListItem divider button onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
-              <ListItemText> Teachers Account</ListItemText>
+              <ListItemText> Chat</ListItemText>
             </ListItemIcon>
           </ListItem>
         </List>
@@ -74,6 +72,7 @@ const DrawerComponent = () => {
         onClick={() => setOpenDrawer(!openDrawer)}
         disableRipple
       >
+        
         <MenuIcon className={classes.menuIconToggle} />
       </IconButton>
     </>

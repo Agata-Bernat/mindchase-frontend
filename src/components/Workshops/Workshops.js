@@ -1,15 +1,13 @@
-import React from "react";
 import WorkshopItem from "./WorkshopItem";
-import WorkshopData from "./WorkshopBodyData";
 import { Box, Grid } from "@material-ui/core";
 
-const Workshops = () => {
+const Workshops = ({courses,setCourses}) => {
+
   return (
     <>
-      <Box p={5}>
-        <Grid container spacing={4}>
-          {/* loop them props */}
-          {WorkshopData.map((card, id) => {
+      <Box p={10}>
+        <Grid container spacing={8} >
+          {courses &&  courses.map((card, id) => {
             return (
               <Grid item xs={12} sm={6} md={4} key={id}>
                 <WorkshopItem {...card} />
@@ -17,7 +15,7 @@ const Workshops = () => {
             );
           })}
         </Grid>
-      </Box>
+      </Box>   
     </>
   );
 };

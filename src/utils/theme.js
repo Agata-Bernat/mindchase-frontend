@@ -1,15 +1,5 @@
 const { createMuiTheme } = require('@material-ui/core');
 
-//Dark mode
-
-// const darkTheme = createMuiTheme({
-//   palette: {
-//     type: 'dark',
-//   },
-// });
-
-// export default darkTheme
-
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -18,7 +8,7 @@ const theme = createMuiTheme({
     secondary: {
       main: '#d62828',
     },
-    type: 'dark', //This is will make your component dark theme
+    type: 'dark', 
   },
   typography: {
     h1: {

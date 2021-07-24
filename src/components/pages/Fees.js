@@ -35,11 +35,11 @@ const Fees = () => {
     <>
       <div className={classes.conatainer} maxWidth={false}>
         <Hidden mdDown>
-          <h1 className={classes.title}>Your Classroom</h1>
-          <p className={classes.text}>Your Graduate School of management</p>
+          <h1 className={classes.title}>Your Massages</h1>
+          <p className={classes.text}>Start Massages with yours friends</p>
 
           <Button variant='contained' color='secondary'>
-            neek ummak
+         that the Button
           </Button>
         </Hidden>
       </div>

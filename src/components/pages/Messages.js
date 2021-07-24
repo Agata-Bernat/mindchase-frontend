@@ -1,7 +1,8 @@
 import React from 'react';
-import { Hidden, makeStyles, Button } from '@material-ui/core';
+import { makeStyles, Button } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
 import IconsGrid from '../IconsGrid/IconsGrid';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   conatainer: {
@@ -29,19 +30,19 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Massges = () => {
+const Messages = () => {
   const classes = useStyles();
   return (
     <>
       <div className={classes.conatainer} maxWidth={false}>
-        <Hidden mdDown>
-          <h1 className={classes.title}>Your Classroom</h1>
-          <p className={classes.text}>Your Graduate School of management</p>
-
-          <Button variant='contained' color='secondary'>
-            Doven you can putt your compenent hier my friend
-          </Button>
-        </Hidden>
+          <h1 className={classes.title}>Messages</h1>
+          <p className={classes.text}>YChat with me</p>
+          <Button variant='contained' color='secondary'
+               to='/login'
+               component={Link}
+          >
+            Doven you can put your competent hire my friend
+          </Button>   
       </div>
       <IconsGrid />
       <MainContent />
@@ -49,4 +50,4 @@ const Massges = () => {
   );
 };
 
-export default Massges;
+export default Messages;

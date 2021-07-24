@@ -1,8 +1,9 @@
 import React from 'react';
 import { Grid, Button, makeStyles, Typography } from '@material-ui/core';
-import studentsPic from '../../images/bannerimg.png';
 import school from '../../images/scho.svg';
 import './MainContent.css';
+import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles(theme => ({
   content: {
@@ -14,15 +15,16 @@ const useStyles = makeStyles(theme => ({
     margin: '10px',
     textAlign: 'center',
     '&:hover': {
-      background: 'black',
-    },
+      background: '#ffe082'
+    }
   },
   btn: {
-    color: 'yellow',
-    border: '1px solid yellow',
+    color: 'black',
+    border: '1px solid red',
+    background: 'red'
   },
   imgText: {
-    color: '#457b9d',
+    color: ' white',
     border: '1px solid white',
     width: '100%',
     textAlign: 'right',
@@ -49,16 +51,12 @@ const MainContent = () => {
           <div className={classes.container}>
             <Typography variant='h2'>Be a Hero</Typography>
             <p className={classes.content}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sint
-              corporis excepturi quidem ducimus aut repellat, aliquid quisquam
-              nulla provident modi ratione aliquam inventore possimus minus, ad
-              natus distinctio tempore! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Doloremque cupiditate eius facilis eveniet
-              expedita dignissimos ipsam laboriosam odit, consectetur
-              repellendus, tempora error enim perspiciatis rerum ex, sunt quia
-              dicta delectus.
+            You never have enough time and every day is just to short to get things done? What if you learn how to structure your day, how to prioritize your tasks and still have enough time for your friends, family and hobbies?
             </p>
-            <Button variant='outlined' className={classes.btn}>
+            <Button variant='outlined' className={classes.btn}
+               to='/register'
+               component={Link} 
+            >
               Read More
             </Button>
           </div>
@@ -70,12 +68,12 @@ const MainContent = () => {
           <div className={classes.container}>
             <Typography variant='h2'>Success is our priority</Typography>
             <p className={classes.content}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sint
-              corporis excepturi quidem ducimus aut repellat, aliquid quisquam
-              nulla provident modi ratione aliquam inventore possimus minus, ad
-              natus distinctio tempore!
+            wouldn't it be great to know exactly what drives you most and helps you to channel your strengths and achieve your goal easily?
             </p>
-            <Button className={classes.btn} variant='outlined' color='primary'>
+            <Button className={classes.btn} variant='outlined' color='primary'
+               to='/register'
+               component={Link} 
+            >
               Read More
             </Button>
           </div>

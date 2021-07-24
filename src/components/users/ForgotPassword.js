@@ -14,7 +14,7 @@ const ForgotPassword=()=>{
     }
 
 
-    const paperStyle={padding :25,height:'78vh',width:310, margin:"20px auto"}
+    const paperStyle={padding :25,height:'78vh',width:310, margin:"90px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
 
